@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD com Axios e PHP</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<script>
+// Exemplo de CREATE (Criar)
+function createUser() {
+    axios.post('create.php', {
+        name: 'João Silva',
+        tel: '11999887766',
+        email: 'joao@example.com'
+    })
+    .then(function (response) {
+        console.log(response.data);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+}
+
+// Exemplo de READ (Ler)
+function getUsers() {
+    axios.get('read.php')
+    .then(function (response) {
+        console.log(response.data);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+}
+
+// Exemplo de UPDATE (Atualizar)
+function updateUser() {
+    axios.post('update.php', {
+        id: 1,
+        name: 'João Silva Alterado',
+        tel: '11999887777',
+        email: 'joao_alterado@example.com'
+    })
+    .then(function (response) {
+        console.log(response.data);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+}
+
+// Exemplo de DELETE (Deletar)
+function deleteUser() {
+    axios.post('delete.php', {
+        id: 1
+    })
+    .then(function (response) {
+        console.log(response.data);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+}
+</script>
+
+</body>
+</html>
